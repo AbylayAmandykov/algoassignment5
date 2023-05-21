@@ -122,7 +122,7 @@ private void inOrderTraversal(ArrayList<Node> arrayList, Node node) {
 }
 ```
 
-### getSize
+### size
 
 **Description:** This method returns the size of the BST
 
