@@ -12,23 +12,23 @@ Here you can find explanations of all functions that I used to solve this assign
 
 ```java
  public void put(K key, V val) {
-        this.root = put(root, key, val);
-        size++;
-    }
+    this.root = put(root, key, val);
+    size++;
+ }
 public Node put(Node node, K key, V val) {
-        if(node == null) {
-            return new Node(key, val);
-        }
-        if(node.key.compareTo(key) < 0) {
-            node.left = put(node.left, key, val);
-        }
-        if(node.key.compareTo(key) > 0) {
-            node.right = put(node.right, key, val);
-        }
-        else {
-            node.val = val;
-        }
-        return node;
+    if(node == null) {
+       return new Node(key, val);
+    }
+    if(node.key.compareTo(key) < 0) {
+       node.left = put(node.left, key, val);
+    }
+    if(node.key.compareTo(key) > 0) {
+       node.right = put(node.right, key, val);
+    }
+    else {
+       node.val = val;
+    }
+       return node;
     }
 ```
 
@@ -40,23 +40,23 @@ public Node put(Node node, K key, V val) {
 
 ```java
   public V get(K key){
-        Node node = get(root, key);
-        return node != null ? node.val : null;
-    }
+     Node node = get(root, key);
+     return node != null ? node.val : null;
+  }
   private Node get(Node node, K key) {
-        if(node == null) {
-            return null;
-        }
-        if(node.key.compareTo(key) < 0 ) {
-            return get(node.left, key);
-        }
-        if(node.key.compareTo(key) > 0) {
-            return get(node.right, key);
-        }
-        else {
-            return node;
-        }
-    }
+     if(node == null) {
+        return null;
+     }
+     if(node.key.compareTo(key) < 0 ) {
+        return get(node.left, key);
+     }
+     if(node.key.compareTo(key) > 0) {
+        return get(node.right, key);
+      }
+     else {
+        return node;
+     }
+ }
 ```
 
 ### delete
