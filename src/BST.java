@@ -16,10 +16,10 @@ public class BST<K extends Comparable<K>, V> {
         if(node == null) {
             return new Node(key, val);
         }
-        if(node.key.compareTo(key) == 1) {
+        if(node.key.compareTo(key) < 0) {
             node.left = put(node.left, key, val);
         }
-        if(node.key.compareTo(key) == -1) {
+        if(node.key.compareTo(key) > 0) {
             node.right = put(node.right, key, val);
         }
         else {
@@ -27,7 +27,24 @@ public class BST<K extends Comparable<K>, V> {
         }
         return node;
     }
-    public V get(K key){}
+    public V get(K key){
+        Node node = get(root, key);
+        return node != null ? node.val : null;
+    }
+    private Node get(Node node, K key) {
+        if(node == null) {
+            return null;
+        }
+        if(node.key.compareTo(key) < 0 ) {
+            return get(node.left, key);
+        }
+        if(node.key.compareTo(key) > 0) {
+            return get(node.right, key);
+        }
+        else {
+            return node;
+        }
+    }
     public void delete(K key) {}
     public Iterable<K> iterator() {}
 }
