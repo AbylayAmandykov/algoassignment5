@@ -6,7 +6,7 @@ Here you can find explanations of all functions that I used to solve this assign
 
 ### put
 
-**Description:** 
+**Description:** This method adds key value pair to the BST or updates it
 
 **Solution:** 
 
@@ -34,7 +34,7 @@ public Node put(Node node, K key, V val) {
 
 ### get
 
-**Description:** 
+**Description:** This method extracts the value with a given key from the BST
 
 **Solution:** 
 
@@ -61,7 +61,7 @@ public Node put(Node node, K key, V val) {
 
 ### delete
 
-**Description:** 
+**Description:** This method removes a key value pair from the BST 
 
 **Solution:** 
 
@@ -102,7 +102,7 @@ public Node put(Node node, K key, V val) {
 
 ### iterator
 
-**Description:** 
+**Description:** This method returns an iterable collection of nodes and perform in-order traversal of the BST
 
 **Solution:** 
 
@@ -124,7 +124,7 @@ private void inOrderTraversal(ArrayList<Node> arrayList, Node node) {
 
 ### getSize
 
-**Description:** 
+**Description:** This method returns the size of the BST
 
 **Solution:** 
 
