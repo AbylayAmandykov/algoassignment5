@@ -102,7 +102,7 @@ public Node put(Node node, K key, V val) {
 
 ### iterator
 
-**Description:** This method returns an iterable collection of nodes and perform in-order traversal of the BST
+**Description:** This method returns an iterable collection of nodes and perform in-order traversal of the BST adding the nodes to the list in ascending order
 
 **Solution:** 
 
