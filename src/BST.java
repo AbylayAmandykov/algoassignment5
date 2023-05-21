@@ -32,7 +32,7 @@ public class BST<K extends Comparable<K>, V> {
         if(node.key.compareTo(key) < 0) {
             node.left = put(node.left, key, val);
         }
-        if(node.key.compareTo(key) > 0) {
+        else if(node.key.compareTo(key) > 0) {
             node.right = put(node.right, key, val);
         }
         else {
@@ -55,7 +55,7 @@ public class BST<K extends Comparable<K>, V> {
         if(node.key.compareTo(key) < 0 ) {
             return get(node.left, key);
         }
-        if(node.key.compareTo(key) > 0) {
+        else if(node.key.compareTo(key) > 0) {
             return get(node.right, key);
         }
         else {
@@ -81,7 +81,7 @@ public class BST<K extends Comparable<K>, V> {
         if(node.key.compareTo(key) < 0) {
             node.left = delete(node.left, key);
         }
-        if(node.key.compareTo(key) > 0) {
+        else if(node.key.compareTo(key) > 0) {
             node.right = delete(node.right, key);
         }
         else {
