@@ -1,5 +1,6 @@
 public class BST<K extends Comparable<K>, V> {
     private Node root;
+    private int size = 0;
     private class Node {
         private K key;
         private V val;
@@ -47,4 +48,7 @@ public class BST<K extends Comparable<K>, V> {
     }
     public void delete(K key) {}
     public Iterable<K> iterator() {}
+    public int size() {
+        return size;
+    }
 }
