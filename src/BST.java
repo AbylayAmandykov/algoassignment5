@@ -11,7 +11,8 @@ public class BST<K extends Comparable<K>, V> {
         }
     }
     public void put(K key, V val) {
-        root = put(root, key, val);
+        this.root = put(root, key, val);
+        size++;
     }
     public Node put(Node node, K key, V val) {
         if(node == null) {
@@ -46,7 +47,44 @@ public class BST<K extends Comparable<K>, V> {
             return node;
         }
     }
-    public void delete(K key) {}
+    public void delete(K key) {
+        this.root = delete(root, key);
+        size--;
+    }
+    private Node delete(Node node, K key) {
+        if(node==null) {
+            return null;
+        }
+        if(node.key.compareTo(key) < 0) {
+            node.left = delete(node.left, key);
+        }
+        if(node.key.compareTo(key) > 0) {
+            node.right = delete(node.right, key);
+        }
+        else {
+            if(node.left == null) {
+                size--;
+                return node.right;
+            }
+            else if(node.right == null) {
+                size--;
+                return node.left;
+            }
+            else {
+                Node minNode = findMinNode(node.right);
+                node.key = minNode.key;
+                node.val = minNode.val;
+                node.right = delete(node.right, minNode.key);
+            }
+        }
+        return node;
+    }
+    private Node findMinNode(Node node) {
+        if(node.left == null) {
+            return node;
+        }
+        return findMinNode(node.left);
+    }
     public Iterable<K> iterator() {}
     public int size() {
         return size;
