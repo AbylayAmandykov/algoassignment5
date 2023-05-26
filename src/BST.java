@@ -127,4 +127,21 @@ public class BST<K extends Comparable<K>, V> {
         arrayList.add(node);
         inOrderTraversal(arrayList, node.right);
     }
+    private boolean contains(K key) {
+        return contains(root, key);
+    }
+    private boolean contains(Node node, K key) {
+        if(node == null) {
+            return false;
+        }
+        if(node.key.compareTo(key) < 0) {
+            return contains(node.left, key);
+        }
+        else if(node.key.compareTo(key) > 0) {
+            return contains(node.right, key);
+        }
+        else {
+            return true;
+        }
+    }
 }
