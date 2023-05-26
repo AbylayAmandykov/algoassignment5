@@ -127,7 +127,7 @@ public class BST<K extends Comparable<K>, V> {
         arrayList.add(node);
         inOrderTraversal(arrayList, node.right);
     }
-    private boolean contains(K key) {
+    public boolean contains(K key) {
         return contains(root, key);
     }
     private boolean contains(Node node, K key) {

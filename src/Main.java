@@ -9,10 +9,12 @@ public class Main {
         tree.put(77, "Value 77");
 
         //Iterating over the tree and printing the result
-        Iterable it = tree.iterator();
-        for(Object elem : it) {
-            System.out.println(elem);
-        }
+//        Iterable it = tree.iterator();
+//        for(Object elem : it) {
+//            System.out.println(elem);
+//        }
+        System.out.println("Contains 66: " + tree.contains(55));
+        System.out.println("Contains 100: " + tree.contains(100));
 
 
     }
